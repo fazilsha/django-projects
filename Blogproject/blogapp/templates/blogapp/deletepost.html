@@ -1,0 +1,17 @@
+{% extends "blogapp/base.html" %}
+{% block title %} Delete post {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+<h1>Delete Post</h1>
+    <div class="jumbotron">
+    <div class="form-group">
+        <form  method="POST">
+            {% csrf_token %}
+            <strong>Are you sure??</strong>
+            <button class="btn btn-secondary">Delete</button>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock%}

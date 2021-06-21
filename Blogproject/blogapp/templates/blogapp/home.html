@@ -1,0 +1,17 @@
+{% extends "blogapp/base.html" %}
+{% block content %}
+<div class="container">
+<h1>Post</h1>
+    <div class="jumbotron">
+{% for post in object_list %}
+<ul>
+    <strong><li><a href="{% url 'article' post.pk %}">{{ post.title }}</a> - {{ post.author}}
+        <a href="{% url "updatepost"  post.pk%}">(Edit)</a>
+        <a href="{% url "deletepost"  post.pk%}">(Delete)</a>
+    </li></strong>
+    <li>{{ post.body }}</li>
+</ul>
+{% endfor %}
+        </div>
+    </div>
+{% endblock%}
